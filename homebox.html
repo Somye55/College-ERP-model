@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+    <style>
+        .container {
+
+            position: absolute;
+            top: 100px;
+            left: 8%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            border: 2px solid black;
+        }
+
+        .container1 {
+            border: 2px solid rgb(179, 25, 25);
+            padding: 60px 60px;
+            margin: 20px 20px;
+            font-size: 25px;
+            width: 30%;
+            text-align: center;
+            height: 200%;
+            border-radius: 4px;
+
+
+
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(179, 25, 25);
+            font-weight: bold;
+            font-family: 'Signika Negative', sans-serif;
+
+        }
+
+        .container1:hover {
+            background-color: rgb(179, 25, 25);
+            transition: 0.5s ease;
+
+        }
+
+        .container1:hover a {
+            color: white;
+            transition: 0.5s ease;
+        }
+
+        .nav-item a {
+            color: brown;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-decoration: none;
+        }
+
+        #nav {
+            background-color: rgb(204, 202, 202);
+
+        }
+
+        .nav-item a:hover {
+            color: rgb(10, 138, 138);
+        }
+
+        #login {
+            position: relative;
+            top: 5px;
+            border: 2px solid rgb(99, 2, 2);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgb(99, 2, 2);
+
+        }
+
+
+        #login:hover {
+            background-color: rgb(99, 2, 2);
+            transition: all 0.5s;
+            color: white;
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-xl fixed-top" id="nav">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                <a href="https://www.srms.ac.in/cet/">
+                    <img src="http://www.srms.ac.in/comptech/img/q.png" width=120 alt="SRMS">
+
+                </a>
+            </div>
+            <div class="navbar-nav me-5 ">
+                <div class="nav-item ">
+                    <div class="nav-item ">
+                        <%if(findstudent.name!=true){%>
+
+                            <div class="btn-group">
+                                <button type="button" class="btn" style="pointer-events: none;" id="name">
+                                    <%=findstudent.name%>
+                                </button>
+                                <button type="button" class="btn dropdown-toggle dropdown-toggle-split p-1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/student/view_profile/<%=findstudent._id%>">View
+                                            Profile</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+
+                                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+
+
+                            </div>
+                            <%}else{%>
+
+                                <a href="/login"><button id="login"> Login </button> </a>
+                                <%}%>
+
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+    </nav>
+
+    <div class="container">
+        <div class="container1"><a href="/student/view_profile/<%=findstudent._id%>">View Profile</a></div>
+        <div class="container1"><a href="/student/polls/<%=findstudent._id%>">Polls</a></div>
+        <div class="container1"><a href="/student/study_material/assignments/<%=findstudent._id%>">Study Material</a>
+        </div>
+        <div class="container1"> <a href="/student/circulars/<%=findstudent._id%>">Circulars</a></div>
+        <div class="container1"><a href="/student/faculty_helpdesk/<%=findstudent._id%>">Faculty Helpdesk</a></div>
+        <div class="container1"><a href="/student/about_us/<%=findstudent._id%>">About Us</a></div>
+    </div>
+
+    </div>
+
+</body>
+
+</html>

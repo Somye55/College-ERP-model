@@ -1,0 +1,29 @@
+<%layout('./boilerplate')%>
+   DATABASE
+   <div class="container" style="margin-top: 80px;">
+    
+   <table class="table table-bordered table-hover ">
+    <thead class="table-dark">
+      <tr class="text-center">
+        <th scope="col"> Name </th>
+        <th scope="col">Username</th>
+        <th scope="col">Password</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+        <%for(let admin of admins){%> 
+      <tr>
+        <td><%=admin.name%></td>
+        <td><%=admin.username%></td>
+        <td><%=admin.password%></td>              
+        <td><a href="/admin/database/view/<%=findadmin._id%>/<%=admin._id%>">View</a> </td>              
+      </tr>
+      <%}%>           
+    </tbody>
+  </table>
+</div>
+        
+</form>
+</body>
+</html>

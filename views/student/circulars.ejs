@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+      body{
+        background-image: url(https://cdn.pixabay.com/photo/2016/10/11/21/43/geometric-1732847_960_720.jpg);
+      }
+      .nav-item a {
+        color: brown;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        text-decoration: none;
+        
+    }
+
+    #nav {
+        background-color: rgb(204, 202, 202);
+
+
+    }
+
+    .nav-item a:hover {
+        color: rgb(10, 138, 138);
+    }
+    #active{
+      color: rgb(10, 138, 138);
+  }
+  .container{
+    position: relative;
+    top: 106px;
+    
+  }
+  td{
+    color: white;
+  }
+  tr{
+    color: white;
+ }
+ th{
+   color: rgb(199, 171, 15);
+ }
+  .route{
+    position: absolute;
+    top: 80px;
+    left: 31%;
+    
+}
+.material-icons{
+    position: relative;
+    top: 7px;
+    color: rgb(68, 7, 7);
+}
+.material-icons:hover{
+  color: rgb(206, 47, 47);
+}
+    </style>
+
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-xl fixed-top" id="nav">
+    <div class="container-fluid">
+        <div class="navbar-brand">
+            <a href="https://www.srms.ac.in/cet/">
+                <img src="http://www.srms.ac.in/comptech/img/q.png" width=120 alt="SRMS">
+
+            </a>
+        </div>
+        <div class="navbar-nav me-5 ">
+            <div class="nav-item ">
+                <li class="nav-link "><a href="/student/home/<%=findadmin._id%>"> Dashboard</a></li>
+            </div>
+            <div class="nav-item ">
+                <li class="nav-link "><a id="active" href="/student/study_material/assignments/<%=findadmin._id%>">
+                        Study Material</a></li>
+            </div>
+            <div class="nav-item ">
+                <li class="nav-link "><a href="/student/polls/<%=findadmin._id%>"> Polls</a></li>
+            </div>
+            <div class="nav-item ">
+                <li class="nav-link "><a href="/student/about_us/<%=findadmin._id%>"> About Us</a></li>
+            </div>
+            <div class="nav-item ">
+                <%if(findadmin.name!=true){%>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn" style="pointer-events: none;" id="name">
+                            <%=findadmin.name%>
+                        </button>
+                        <button type="button" class="btn dropdown-toggle dropdown-toggle-split p-1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/login">Logout</a></li>
+                            <li><a class="dropdown-item" href="/student/view_profile/<%=findadmin._id%>">View
+                                    Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </div>
+                    <%}else{%>
+
+                        <a href="/login"><button id="login"> Login </button> </a>
+                        <%}%>
+
+            </div>
+
+        </div>
+    </div>
+</nav>
+<div class="route">
+  <a href="/student/home/<%=findadmin._id%>">dashboard</a><span class="material-icons">navigate_next</span><a href="/student/study_material/circulars/<%=findadmin._id%>">circulars</a>
+</div>
+    <div class="container">
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Circulars</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr >
+            <th scope="row">1</th>
+            <td>Dear Students,Please find the updated final mini project list.</td>
+          <td><a href=""> <span class="material-icons">
+            visibility
+            </span></a></td>
+        </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Dear Students,  
+                Greetings!"Success is not final; failure is not fatal: It is the courage to continue that counts." So be it, for CSE E-Newsletter as well. We would greatly appreciate your valuable suggestions for the same. Happy Reading!
+                
+                The Editorial Board</td>
+            <td><a href="/project1/CSE E-News Letter Vol XI_Issue III.pdf" target="blank"> <span class="material-icons">
+                visibility
+                </span></a></td> 
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td >Comptech-2021(A Technical Festival)</td>
+            <td><a href="/project1/RuleBook.pdf" target="blank"><span class="material-icons">
+                visibility
+                </span></td></a> 
+          </tr>
+          <tr >
+            <th scope="row">4</th>
+            <td>Dear students, Department of Computer Science & Engineering has planned a Guest Lecture cum Webinar</td>
+          <td><a href=""> <span class="material-icons">
+            visibility
+            </span></a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    
+</body>
+</html>

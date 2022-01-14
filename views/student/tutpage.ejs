@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home- Shri Ram Murti Smarak College of Engineering and Technology, Bareilly</title>
+    <link rel="shortcut icon" href="https://custpostimages.s3.ap-south-1.amazonaws.com/5876/1613798237528.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body{
+            background-image: url(https://cdn.pixabay.com/photo/2016/10/11/21/43/geometric-1732847_960_720.jpg);
+        }
+
+.nav-item a {
+    color: brown;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-decoration: none;
+}
+
+#nav {
+    background-color: rgb(204, 202, 202);
+    
+
+}
+#sidebox {
+    width: 200px;
+    position: absolute;
+    top: 200px;
+    left: 0px;
+    text-align: left;
+    padding-top: 20px;
+    
+}
+#sidebox ul {
+    height: 00px;
+}
+#sidebox li {
+    height: 60px;
+}
+
+#sidebox li,
+#sidebox a {
+    list-style-type: none;
+    background-color: rgb(207, 109, 116);
+    color: rgb(105, 23, 23);
+    text-align: center;
+    border-radius: 5px;
+    padding: 18px 17px;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+}
+
+.nav-item a:hover {
+    color: rgb(10, 138, 138);
+}
+
+#sidebox a:hover,
+#sidebox li:hover {
+    color: white;
+    background-color: darkred;
+    transition: 0.5s all;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    top: 100px;
+    width: 900px;
+    color: white;
+    
+}
+.container1{
+    position: relative;
+    right: -100px;
+    width: 40%;
+    top: 100px;
+    margin: 30px;
+    text-align: center;
+    
+    
+  }
+  
+  .image {
+    border-radius: 25px;
+    margin-right: 35px;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: 0.5s ;
+    filter: opacity(0.7);
+  }
+  
+  .middle {
+    transition: .3s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .container1:hover .image {
+    
+    filter: brightness(0.5);
+    transition: 0.5s ease;
+  }
+  
+  .container1:hover .middle {
+    opacity: 1;
+    
+  }
+  
+  .text {
+    background-color: rgb(139, 6, 6);
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+    border-radius: 10%;
+  }
+  #sidebox #active{
+      background-color: rgb(10, 138, 138);
+  }
+.container4{
+    width: 200px;
+    position: absolute;
+    top: 200px;
+    left: -12px;
+    text-align: left;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.box1{
+    border: 1px solid rgb(235, 230, 230);
+    padding: 10px 10px;
+    margin: 5px 5px;
+    border-radius: 4px;
+    text-align: center;
+    transition: 0.5s all;
+
+
+    
+}
+.box1 a{
+    text-decoration: none;
+    color: rgb(139, 6, 6);
+    font-size: 20px;
+    font-family: 'Signika Negative', sans-serif;
+
+}
+.box1:hover{
+    background-color: rgb(139, 6, 6);
+    border: 2px solid rgb(139, 6, 6);
+    transition: 0.5 ease;
+}
+.box1:hover a{
+    color: white;
+    transition: 0.5s ease;
+}
+#act{
+    background-color: rgb(139, 6, 6);
+    color: white;
+}
+#act a{
+    color: white;
+}
+#active{
+    color: rgb(10, 138, 138);
+}
+.route{
+    position: absolute;
+    top: 80px;
+    left: 31%;
+    
+}
+.material-icons{
+    position: relative;
+    top: 7px;
+}
+
+</style>
+</head>
+
+<body>
+   
+       
+
+   <nav class="navbar navbar-expand-xl fixed-top" id="nav">
+       <div class="container-fluid">
+           <div class="navbar-brand">
+               <a href="https://www.srms.ac.in/cet/">
+                   <img src="http://www.srms.ac.in/comptech/img/q.png" width=120 alt="SRMS">
+
+               </a>
+           </div>
+           <div class="navbar-nav me-5 ">
+               <div class="nav-item ">
+                   <li class="nav-link "><a href="/student/home/<%=findadmin._id%>"> Dashboard</a></li>
+               </div>
+               <div class="nav-item ">
+                   <li class="nav-link "><a id="active" href="/student/study_material/assignments/<%=findadmin._id%>"> Study Material</a></li>
+               </div>
+               <div class="nav-item ">
+                   <li class="nav-link "><a href="/student/polls/<%=findadmin._id%>"> Polls</a></li>
+               </div>
+               <div class="nav-item ">
+                   <li class="nav-link "><a href="/student/about_us/<%=findadmin._id%>"> About Us</a></li>
+               </div>
+               <div class="nav-item ">
+                   <%if(findadmin.name!=true){%>
+
+                   <div class="btn-group">
+                       <button type="button" class="btn" style="pointer-events: none;" id="name">
+                           <%=findadmin.name%>
+                       </button>
+                       <button type="button" class="btn dropdown-toggle dropdown-toggle-split p-1"
+                           data-bs-toggle="dropdown" aria-expanded="false" >
+                           <span class="visually-hidden">Toggle Dropdown</span>
+                       </button>
+                       <ul class="dropdown-menu">
+                           <li><a class="dropdown-item" href="/login">Logout</a></li>
+                           <li><a class="dropdown-item" href="#">Another action</a></li>
+                           <li><a class="dropdown-item" href="#">Something else here</a></li>
+                   </div>
+                   <%}else{%>
+                  
+                       <a href="/login"><button id="login"> Login </button> </a>
+                       <%}%>
+
+               </div>
+
+           </div>
+       </div>
+   </nav>
+   <div class="route">
+    <a href="/student/home/<%=findadmin._id%>">dashboard</a><span class="material-icons">navigate_next</span><a href="/student/study_material/tutorials/<%=findadmin._id%>">tutorials</a>
+</div>
+   <div class="container">
+   <div class="container1">
+       
+    <img src="https://images.shiksha.com/mediadata/images/1620642782phpjjUuUl.jpeg" alt="Avatar" class="image" style="width:100%">
+    MLT tutorial
+<div class="middle">
+    <a style="text-decoration:none" href="../newsubseminartopics.docx"> <div class="text">Download</div>
+    </div> </a>
+
+   </div>
+
+   <div class="container1">
+    <img src="https://images.shiksha.com/mediadata/images/1620642782phpjjUuUl.jpeg" alt="Avatar" class="image" style="width:100%">
+    DBMS-tutorial
+<div class="middle">
+    <a style="text-decoration:none" href="../newsubseminartopics.docx"> <div class="text">Download</div>
+    </div> </a>   
+   </div>
+
+   <div class="container1">
+    <img src="https://images.shiksha.com/mediadata/images/1620642782phpjjUuUl.jpeg" alt="Avatar" class="image" style="width:100%">
+    CD-tutorial
+<div class="middle">
+    <a style="text-decoration:none" href="../newsubseminartopics.docx"> <div class="text">Download</div>
+    </div> </a>
+</div>
+   <div class="container1">
+    <img src="https://images.shiksha.com/mediadata/images/1620642782phpjjUuUl.jpeg" alt="Avatar" class="image" style="width:100%">
+    CD-tutorial
+<div class="middle">
+    <a style="text-decoration:none" href="../newsubseminartopics.docx"> <div class="text">Download</div>
+    </div> </a>
+</div>
+   <div class="container1">
+    <img src="https://images.shiksha.com/mediadata/images/1620642782phpjjUuUl.jpeg" alt="Avatar" class="image" style="width:100%">
+    CD-tutorial
+<div class="middle">
+    <a style="text-decoration:none" href="../newsubseminartopics.docx"> <div class="text">Download</div>
+    </div> </a>
+</div>
+   <div class="container1">
+    <img src="https://images.shiksha.com/mediadata/images/1620642782phpjjUuUl.jpeg" alt="Avatar" class="image" style="width:100%">
+    CD-tutorial
+<div class="middle">
+    <a style="text-decoration:none" href="../newsubseminartopics.docx"> <div class="text">Download</div>
+    </div> </a>
+</div>
+   <div class="container1">
+    <img src="https://images.shiksha.com/mediadata/images/1620642782phpjjUuUl.jpeg" alt="Avatar" class="image" style="width:100%">
+    CD-tutorial
+<div class="middle">
+    <a style="text-decoration:none" href="../newsubseminartopics.docx"> <div class="text">Download</div>
+    </div> </a>
+</div>
+</div>
+<div class="container4">
+    <div class="box1"> <a href="/student/study_material/assignments/<%=findadmin._id%>">Assignments</a> </div>
+    <div class="box1"> <a href="/student/study_material/notes/<%=findadmin._id%>">Notes</a> </div>
+    <div id="act" class="box1"> <a href="/student/study_material/tutorials/<%=findadmin._id%>">Tutorials</a> </div>
+    <div class="box1"> <a href="/student/study_material/others/<%=findadmin._id%>">Others</a> </div>
+</div>
+
+</body>
+</html>

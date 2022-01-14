@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            height: 1000px;
+            background-color: rgb(242, 242, 243);
+            background-image: url(https://cdn.pixabay.com/photo/2016/10/11/21/43/geometric-1732847_960_720.jpg);
+        }
+
+        ul {
+            list-style-type: disc;
+
+
+        }
+
+        .container {
+            width: 75%;
+            position: relative;
+            top: 120px;
+            text-align: justify;
+            height: 750px;
+            font-family: 'Signika Negative', sans-serif;
+            border: 2px solid white;
+            box-shadow: 1px 1px 1px 2px rgb(224, 223, 223);
+            background-color: white;
+            border-radius: 4px;
+        }
+
+        .nav-item a {
+            color: brown;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-decoration: none;
+        }
+
+        #nav {
+            background-color: rgb(204, 202, 202);
+
+        }
+
+        .nav-item a:hover {
+            color: rgb(10, 138, 138);
+        }
+
+        #login {
+            position: relative;
+            top: 5px;
+            border: 2px solid rgb(99, 2, 2);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgb(99, 2, 2);
+
+        }
+
+
+        #login:hover {
+            background-color: rgb(99, 2, 2);
+            transition: all 0.5s;
+            color: white;
+
+
+        }
+
+        .title {
+            margin-top: 88px;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            background-color: rgb(179, 25, 25);
+            width: 86%;
+            display: block;
+            position: relative;
+            left: 123px;
+            height: 90px;
+
+        }
+
+        span .text {
+            margin: 5px 5px;
+        }
+
+        #name {
+            color: rgb(117, 6, 6);
+        }
+        #act{
+            color: rgb(10, 138, 138);
+
+        }
+        .route{
+            position: absolute;
+            top: 80px;
+            left: 31%;
+            color: ;
+            
+        }
+        .material-icons{
+            position: relative;
+            top: 7px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-xl fixed-top" id="nav">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                <a href="https://www.srms.ac.in/cet/">
+                    <img src="http://www.srms.ac.in/comptech/img/q.png" width=120 alt="SRMS">
+
+                </a>
+            </div>
+            <div class="navbar-nav me-5 ">
+                        <div class="nav-item ">
+                            <li class="nav-link "><a href="/student/home/<%=findstudent._id%>"> Dashboard</a></li>
+                        </div>
+                        <div class="nav-item ">
+                            <li class="nav-link "><a href="/student/study_material/assignments/<%=findstudent._id%>"> Study Material</a></li>
+                        </div>
+                        <div class="nav-item ">
+                            <li class="nav-link "><a href="/student/polls/<%=findstudent._id%>"> Polls</a></li>
+                        </div>
+                        <div class="nav-item ">
+                            <li class="nav-link "><a id="act" href="#"> About Us</a></li>
+                        </div>
+                    <div class="nav-item ">
+                        <%if(findstudent.name!=true){%>
+
+                            <div class="btn-group">
+                                <button type="button" class="btn" style="pointer-events: none;" id="name">
+                                    <%=findstudent.name%>
+                                </button>
+                                <button type="button" class="btn dropdown-toggle dropdown-toggle-split p-1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/student/view_profile/<%=findstudent._id%>">View
+                                            Profile</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+
+                                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+
+
+                            </div>
+                            <%}else{%>
+
+                                <a href="/login"><button id="login"> Login </button> </a>
+                                <%}%>
+
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+    </nav>
+    <div class="route">
+        <a href="/student/home/<%=findstudent._id%>">dashboard</a><span class="material-icons">navigate_next</span><a href="/student/study_material/about_us/<%=findstudent._id%>">About Us</a>
+      </div>
+    <div class="container">
+        <h3 class="text-danger mt-4">OVERVIEW</h3>
+        <p>Shri Ram Murti Smarak College of Engineering & Technology , established and run by Shri Ram Murti Smarak
+            Trust has an independent residential campus spread over 35 acres of land with all-weather roads, lush green
+            lawns, playgrounds, Multi-Purpose Hall, Gymnasium, Squash Court and 53020 sq.m. of built-up area on the
+            campus. The campus is aesthetically planned and designed with exquisite facilities.
+
+            The college offers courses of undergraduate and postgraduate levels, with professional or vocational
+            orientation to internationally recognized standards of excellence. All courses lay emphasis on practicals
+            and are multi-disciplinary in approach. The college inculcates Values, Ethics in its students, so that the
+            PRIDE of SRMSCET will become the ASSET of our Nation.
+
+            The College has demonstrated the perennial evidence for merit and quality. It is developing by leaps and
+            bounds in terms of infrastructural facilities and human capital not only to fulfill the requirements of the
+            current technological status but also to set itself as teaching and research centre of eminence in future.
+        </p>
+        <h3 class="text-danger">30 YEARS OF VALUE BASED QUALITY EDUCATION:</h3>
+        <ul>
+            <li>College has been selected for the Technical Education Quality Improvement Programme of National Project
+                Implementation Unit of the Government of India financed by the World Bank.</li>
+            <li>Pioneer among the Self Financed Engineering Institutions of Uttar Pradesh</li>
+            <li>The College is a STAR Performer College of UPTU and winner of Excellence award in B.Tech., B.Pharm, MBA
+                & MCA in year 2009 and 2010 continuously.</li>
+            <li>Ranked among best of all private colleges and government colleges of UP Technical University in term of
+                Gross Average Intellectual Attainment Per Student</li>
+            <li> Winner of Academic Excellence Award of UPTU for MBA, B.Tech and B.Pharm in 2008</li>
+            <li>Winner of Academic Excellence Award of UPTU for MBA, B.Tech and B.Pharm in 2009</li>
+            <li>Consistently ranked number 1 for its MBA course among all institutions of UPTU.</li>
+            <li>Winner of National Awards for excellence in education -2011 in Indian Education Congress -2011</li>
+            <li>Approved institutions for organizing INSPIRE by DST Govt of India</li>
+            <li> Winner of National Employability Award -2012 by AMCAT</li>
+            <li>MOU with ICICI Bank for foundation course in Banking for MBA students</li>
+            <li> MOU with TCS and INFOSYS to run value addition courses</li>
+            <li>Edupreneurs Award -2013 to the Chairman of this college</li>
+            <li>Institutional Memberships of NASSCOM, NHRDN, AIMA, CSI, RMA, AIMS</li>
+            <li>12000+ Alumni at leading positions serving the Global Community</li>
+            <li> Excellent Placement Record since 2000</li>
+            <li>Merit Scholarships of Rs. 3 Crore</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

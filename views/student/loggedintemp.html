@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home- Shri Ram Murti Smarak College of Engineering and Technology, Bareilly</title>
+    <link rel="shortcut icon" href="https://custpostimages.s3.ap-south-1.amazonaws.com/5876/1613798237528.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .nav-item a {
+            color: brown;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-decoration: none;
+        }
+
+        #nav {
+            background-color: rgb(204, 202, 202);
+        
+        }
+
+        #sidebox {
+            width: 200px;
+            position: absolute;
+            top: 200px;
+            left: 0px;
+            text-align: left;
+            padding-top: 20px;
+            ;
+        }
+
+        #sidebox ul {
+            height: 600px;
+        }
+
+
+
+
+
+
+        #sidebox li {
+            height: 40px;
+        }
+
+        #sidebox li,
+        #sidebox a {
+            list-style-type: none;
+            background-color: rgb(207, 109, 116);
+            color: rgb(105, 23, 23);
+            text-align: center;
+            border-radius: 5px;
+            padding: 10px 10px;
+            text-decoration: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+        }
+
+        .nav-item a:hover {
+            color: rgb(10, 138, 138);
+        }
+
+        #sidebox a:hover,
+        #sidebox li:hover {
+            color: white;
+            background-color: darkred;
+            transition: 0.5s all;
+        }
+
+        #main {
+            max-width: 1000px;
+            text-align: justify;
+            position: relative;
+            top: 180px;
+        }
+
+        body {
+            height: 1500px;
+        }
+
+        #login {
+            position: relative;
+            top: 5px;
+            border: 2px solid rgb(99, 2, 2);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgb(99, 2, 2);
+
+        }
+
+
+        #login:hover {
+            background-color: rgb(99, 2, 2);
+            transition: all 0.5s;
+            color: white;
+
+
+        }
+
+        #name {
+            color: #5e5e5e;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            position: relative;
+            top: 1px;
+        }
+        #alert{
+            position: fixed;
+            top: 68px;
+            left:34%;
+            z-index: 99;
+            display: block;
+            width: 500px;
+            
+        }
+    </style>
+</head>
+
+<body>
+   
+       
+
+    <nav class="navbar navbar-expand-xl fixed-top" id="nav">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                <a href="https://www.srms.ac.in/cet/">
+                    <img src="http://www.srms.ac.in/comptech/img/q.png" width=120 alt="SRMS">
+
+                </a>
+            </div>
+            <div class="navbar-nav me-5 ">
+                <div class="nav-item ">
+                    
+                    <li class="nav-link "><a style="color:rgb(10, 138, 138)"
+                            href="http://127.0.0.1:5500/HTML/BOOTSTRAP/homepage.html#"> Home</a> </li>
+                </div>
+                <div class="nav-item ">
+                    <li class="nav-link "><a href='/student/study_material/assignments/<%=findstudent._id%>'> Study Material</a></li>
+                </div>
+                <div class="nav-item ">
+                    <li class="nav-link "><a href="/student/polls"> Polls</a></li>
+                </div>
+                <div class="nav-item ">
+                    <li class="nav-link "><a href="#"> About Us</a></li>
+                </div>
+                <div class="nav-item ">
+                    <%if(findstudent.name!=true){%>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn" style="pointer-events: none;" id="name">
+                            <%=findstudent.name%>
+                        </button>
+                        <button type="button" class="btn dropdown-toggle dropdown-toggle-split p-1"
+                            data-bs-toggle="dropdown" aria-expanded="false" >
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/student/view_profile/<%=findstudent._id%>">View Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                           
+                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                    
+                           
+                    </div>
+                    <%}else{%>
+                   
+                        <a href="/login"><button id="login"> Login </button> </a>
+                        <%}%>
+
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid-sm rounded-2" id="sidebox">
+        <ul>
+            <li><a href="#">Item1</a> </li>
+            <li><a href="#"> Item2</a></li>
+            <li><a href="#">Item3</a> </li>
+            <li><a href="#"> Item4</a></li>
+            <li><a href="#">Item5</a> </li>
+            <li><a href="#"> Item6</a></li>
+        </ul>
+
+    </div>
+    </div>
+    </div>
+    <div class="container-sm " id="main">
+        <div id="alert" class="alert alert-dismissible fade show alert-success alert-sticky" role="alert"><%=success%>, <%=findstudent.name%>!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
+        
+
+
+
+       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis mollitia ipsa deleniti,
+        adipisci soluta veritatis, aut ab enim, expedita magni unde asperiores. Laudantium repudiandae in asperiores
+        officiis vero dolor minima ea provident vitae reprehenderit facilis earum, nulla labore omnis dignissimos
+        aperiam perferendis voluptate quis eveniet quae qui maiores. Illo consectetur corrupti libero expedita officiis
+        debitis, omnis voluptas cupiditate commodi est voluptatem itaque aut beatae asperiores aliquid. A ipsam expedita
+        quaerat sit, numquam repudiandae labore odio! Blanditiis voluptates iste, provident sed ratione voluptate
+        aliquam obcaecati explicabo molestiae necessitatibus, sequi temporibus rerum ipsa numquam vero tempore facere
+        reiciendis deleniti!
+        <!-- <div class="embed-responsive embed-responsive-16by9 m-4">
+            <iframe class="d-block mx-auto" width="560" height="315" src="https://www.youtube.com/embed/il_t1WVLNxk"
+                frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+        </div> -->
+        <iframe width="900" height="506" src="https://www.youtube.com/embed/CVhk6iYw_DE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <div class="container-fluid">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit earum accusantium repudiandae quae eaque
+            inventore cumque, similique ut assumenda nostrum aut ea pariatur unde eius dolorum, molestias autem rerum
+            sapiente laboriosam quaerat voluptatibus fugiat debitis? Repudiandae, voluptate pariatur ipsum illo iure
+            iusto, quaerat quos itaque doloribus nesciunt laborum repellendus veritatis adipisci deleniti neque! Debitis
+            eum exercitationem, laboriosam dolorum natus harum perferendis, laudantium soluta accusamus aliquam sunt
+            quia molestias! Voluptas laboriosam rerum placeat adipisci sapiente ipsum ipsam a, maiores voluptates illum.
+            Ducimus expedita quo laboriosam debitis itaque aliquid facilis adipisci tempore eveniet nulla dolorum
+            assumenda harum aut, modi incidunt aliquam unde.
+        </div>
+
+    </div>
+
+
+    </div>
+    </div>
+
+</body>
+
+</html>
